@@ -1,6 +1,6 @@
 {
   "name": "phone-websocket",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "dist/index.min.js",
   "publishConfig": {
     "access": "public",
