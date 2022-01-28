@@ -1,9 +1,3 @@
-class Phone {
-  url: string;
+const str: string = '123'
 
-  constructor(url: string) {
-    this.url = url;
-  }
-}
-
-export default Phone;
+console.log(str)
