@@ -1,7 +1,7 @@
 {
   "name": "phone-websocket",
   "version": "1.1.1",
-  "main": "lib/phoneWebsocket.umd.min.js",
+  "main": "dist/index.min.js",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
