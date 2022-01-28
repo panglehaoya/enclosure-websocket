@@ -1,6 +1,6 @@
 {
   "name": "phone-websocket",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "lib/phoneWebsocket.umd.min.js",
   "publishConfig": {
     "access": "public",
