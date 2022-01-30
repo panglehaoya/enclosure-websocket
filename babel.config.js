@@ -1,9 +1,3 @@
 module.exports = {
-  presets: [
-    [
-      require.resolve('@babel/preset-env'),
-      { modules: false },
-    ],
-    require.resolve('@babel/preset-typescript'),
-  ],
+  presets: [["@babel/preset-env", { targets: { node: "current", esmodules: true } }], "@babel/preset-typescript"],
 };
