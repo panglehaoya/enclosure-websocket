@@ -69,6 +69,7 @@ export interface MeetingInfo {
   muteType?: 0 | 1 | 2;
   recordingStatus?: 1 | 2;
   lastActiveTime?: number;
+  qaStatus?: 0 | 2;
   parties?: Array<MemberInfoType>;
 }
 
@@ -78,3 +79,5 @@ export interface StoreType {
   memberList: Array<MemberInfoType>;
   memberOfNotList: Array<MemberInfoType>;
 }
+
+export type ReactionStr = "isConnectedWS" | "meetingInfo" | "memberList" | "memberOfNotList" | "qaStatus";

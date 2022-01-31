@@ -9,7 +9,7 @@ import {
   OnCloseType,
   OnMessageType,
   SendMessageType,
-  MemberInfoType,
+  ReactionStr,
 } from "@/types";
 
 const emitter = mitt();
@@ -17,7 +17,13 @@ const emitter = mitt();
 class PhoneWebSocket {
   private wsInstance: undefined | WebSocket;
 
-  private reqMessage: undefined | MeetingAuthSendStr | MeetingControlSendStr | MemberSendStr | "ping";
+  private reqMessage:
+    | undefined
+    | MeetingAuthSendStr
+    | MeetingControlSendStr
+    | MemberSendStr
+    | "ping"
+    | "getPasscodeCfg";
 
   private heartbeatTimer: undefined | number;
 
@@ -43,7 +49,7 @@ class PhoneWebSocket {
     }
 
     this.wsInstance.onopen = () => PhoneWebSocket.onOpen();
-    this.wsInstance.onclose = () => PhoneWebSocket.onClose();
+    this.wsInstance.onclose = () => this.onClose();
     this.wsInstance.onmessage = (res: MessageEvent) => this.onMessage(res);
   }
 
@@ -53,10 +59,23 @@ class PhoneWebSocket {
     return null;
   }
 
-  private static onClose(): OnCloseType {
-    console.log("on close");
-
+  private onClose(): OnCloseType {
+    console.log("websocket close");
+    this.reConnect();
     return null;
+  }
+
+  private reConnect() {
+    delete this.wsInstance;
+    this.reConnectTimes += 1;
+    console.log("re connect times", this.reConnectTimes);
+    this.timer = setTimeout(() => {
+      if (this.reConnectTimes < 5) {
+        this.init();
+      } else {
+        clearTimeout(this.timer);
+      }
+    }, 1000);
   }
 
   private onMessage(res: MessageEvent): OnMessageType {
@@ -67,7 +86,7 @@ class PhoneWebSocket {
       const parseData = JSON.parse(data);
       clearInterval(this.heartbeatTimer);
       this.heartbeatTimer = this.heartbeatCheck();
-      this.handleResData(data);
+      this.handleResData(parseData);
     }
     return null;
   }
@@ -83,11 +102,20 @@ class PhoneWebSocket {
       console.log("ServerPushMsg-Party --->");
       console.log(data);
       console.log("<--- ServerPushMsg-Party");
-      this.handleMemberData(data.data);
+      const callStatus = data.data.callStatus;
+      callStatus === 2 ? store.setMemberList(data.data) : store.setMemberOfNotList(data.data);
+    } else if (msgType === "ServerPushMsg-Talking") {
+      console.log("ServerPushMsg-Talking");
+    } else {
+      if (this.reqMessage === "getPasscodeCfg") {
+        if (tag.includes("getPasscodeCfg")) {
+          emitter.emit(this.reqMessage, data);
+        }
+      } else {
+        emitter.emit(this.reqMessage as any, data);
+      }
     }
   }
-
-  private handleMemberData(data: MemberInfoType) {}
 
   private heartbeatCheck() {
     return setInterval(() => {
@@ -125,10 +153,10 @@ class PhoneWebSocket {
     });
   }
 
-  reactive(str: string, cb: () => any) {
+  reactive(str: ReactionStr, cb: (newVal: any) => any) {
     reaction(
-      () => store.isConnectedWS,
-      (newVal) => cb()
+      () => store[str],
+      (newVal) => cb(newVal)
     );
   }
 }

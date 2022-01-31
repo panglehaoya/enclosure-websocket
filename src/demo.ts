@@ -2,10 +2,13 @@ import PhoneWebSocket from "@/index";
 import store from "./store";
 
 const button = document.querySelector("#btn");
-
 button?.addEventListener("click", () => {
-  store.setCount(1);
+  store.setConnectedWS(!store.isConnectedWS);
 });
 
 const phone = new PhoneWebSocket("");
-phone.reactive("count", () => console.log("count++"));
+phone.reactive("isConnectedWS", (newVal) => handleMeetingInfo(newVal));
+
+function handleMeetingInfo(isConnectedWS: any) {
+  console.log(isConnectedWS);
+}

@@ -10,6 +10,11 @@ const state: StoreType = {
 
 const store = makeAutoObservable({
   ...state,
+
+  get qaStatus() {
+    return state.meetingInfo.qaStatus;
+  },
+
   setConnectedWS(state: boolean) {
     this.isConnectedWS = state;
   },
