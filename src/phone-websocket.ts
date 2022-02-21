@@ -160,3 +160,5 @@ export class PhoneWebSocket {
     )
   }
 }
+
+console.log('phone-websocket')
