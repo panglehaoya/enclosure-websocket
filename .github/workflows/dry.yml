@@ -1,8 +1,8 @@
-name: dry
+name: phone-websocket
 
 on:
   push:
-    tags: 
+    tags:
       - '*'           # Push events to every tag not containing /
   pull_request:
     branches:
@@ -46,4 +46,4 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs/.vuepress/dist # The folder the action should deploy.
-        
+
