@@ -1,6 +1,6 @@
 {
   "name": "phone-websocket",
-  "version": "2.0.2-0",
+  "version": "2.0.3-0",
   "description": "phone-websocket",
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
