@@ -39,7 +39,7 @@ jobs:
           npm run build
           npm run build:types
           npm run docs:build
-          npm publish --access public
+          npm publish
       - name: deploy                          # 发布文档
         if: ${{contains(github.ref, 'refs/tags/')}}
         uses: JamesIves/github-pages-deploy-action@4.1.1
