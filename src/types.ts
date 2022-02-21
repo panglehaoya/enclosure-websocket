@@ -5,30 +5,30 @@ export type OnMessageType = ((this: WebSocket, ev: MessageEvent) => any) | null;
 export type OnCloseType = ((this: WebSocket, ev: CloseEvent) => any) | null;
 
 export type MemberSendStr =
-  | "addOutParties"
-  | "callParties"
-  | "endCallParties"
-  | "removeOutParties"
-  | "partyMute"
-  | "partyUnMute"
-  | "promoteQAParty"
-  | "removeQAParty"
-  | "modifyPartyRole"
-  | "modifyPartyInfo";
+  | 'addOutParties'
+  | 'callParties'
+  | 'endCallParties'
+  | 'removeOutParties'
+  | 'partyMute'
+  | 'partyUnMute'
+  | 'promoteQAParty'
+  | 'removeQAParty'
+  | 'modifyPartyRole'
+  | 'modifyPartyInfo';
 
 export type MeetingControlSendStr =
-  | "startQA"
-  | "endQA"
-  | "endMeeting"
-  | "confMute"
-  | "confUnMute"
-  | "confSuperMute"
-  | "startRecord"
-  | "endRecord"
-  | "closeConnection"
-  | "addBlackListParties";
+  | 'startQA'
+  | 'endQA'
+  | 'endMeeting'
+  | 'confMute'
+  | 'confUnMute'
+  | 'confSuperMute'
+  | 'startRecord'
+  | 'endRecord'
+  | 'closeConnection'
+  | 'addBlackListParties';
 
-export type MeetingAuthSendStr = "getMeetingInfo" | "getMeetingMember" | "getPasscodeCfg";
+export type MeetingAuthSendStr = 'getMeetingInfo' | 'getMeetingMember' | 'getPasscodeCfg';
 
 export interface SendMessageType {
   req: MemberSendStr | MeetingControlSendStr | MeetingAuthSendStr;
@@ -37,8 +37,8 @@ export interface SendMessageType {
 export interface SortParamType {
   data: Record<string, any>;
   key: string;
-  order: "ascend" | "descend";
-  type: "string" | "number";
+  order: 'ascend' | 'descend';
+  type: 'string' | 'number';
 }
 
 export interface MemberInfoType {
@@ -80,4 +80,4 @@ export interface StoreType {
   memberOfNotList: Array<MemberInfoType>;
 }
 
-export type ReactionStr = "isConnectedWS" | "meetingInfo" | "memberList" | "memberOfNotList" | "qaStatus";
+export type ReactionStr = 'isConnectedWS' | 'meetingInfo' | 'memberList' | 'memberOfNotList' | 'qaStatus';

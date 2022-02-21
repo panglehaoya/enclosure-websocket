@@ -1,32 +1,30 @@
-import { makeAutoObservable } from "mobx";
-import type { StoreType, MeetingInfo, MemberInfoType } from "@/types";
+import { makeAutoObservable } from 'mobx'
+import type { StoreType, MeetingInfo, MemberInfoType } from './types'
 
 const state: StoreType = {
   isConnectedWS: false,
   meetingInfo: {},
   memberList: [],
-  memberOfNotList: [],
-};
+  memberOfNotList: []
+}
 
-const store = makeAutoObservable({
+export const store = makeAutoObservable({
   ...state,
 
-  get qaStatus() {
-    return state.meetingInfo.qaStatus;
+  get qaStatus () {
+    return state.meetingInfo.qaStatus
   },
 
-  setConnectedWS(state: boolean) {
-    this.isConnectedWS = state;
+  setConnectedWS (state: boolean) {
+    this.isConnectedWS = state
   },
-  setMeetingInfo(info: MeetingInfo) {
-    state.meetingInfo = info;
+  setMeetingInfo (info: MeetingInfo) {
+    state.meetingInfo = info
   },
-  setMemberList(member: MemberInfoType) {
-    this.memberList.push(member);
+  setMemberList (member: MemberInfoType) {
+    this.memberList.push(member)
   },
-  setMemberOfNotList(memberOfNot: MemberInfoType) {
-    this.memberOfNotList.push(memberOfNot);
-  },
-});
-
-export default store;
+  setMemberOfNotList (memberOfNot: MemberInfoType) {
+    this.memberOfNotList.push(memberOfNot)
+  }
+})
