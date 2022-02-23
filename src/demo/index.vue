@@ -15,6 +15,8 @@ export default Vue.extend({
       msg: "index",
     };
   },
-  mounted() {},
+  mounted() {
+    console.log("mounted");
+  },
 });
 </script>
