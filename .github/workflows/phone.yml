@@ -40,10 +40,3 @@ jobs:
           npm run build:types
           npm run docs:build
           npm publish
-      - name: deploy                          # 发布文档
-        if: ${{contains(github.ref, 'refs/tags/')}}
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: docs/.vuepress/dist # The folder the action should deploy.
-

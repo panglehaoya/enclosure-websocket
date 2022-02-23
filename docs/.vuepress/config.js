@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/phone-websocket/',
   title: 'phone-websocket',
   description: 'phone-websocket',
   head: [
@@ -26,10 +27,14 @@ module.exports = {
           title: '如何使用',
           collapsable: false,
           children: [
-            ['init.md', '初始化']
+            ['init.md', '使用说明']
           ]
         }
       ],
     }
-  }
+  },
+  plugins: [['vuepress-plugin-code-copy', {
+    align: 'bottom',
+    color: '#87ceeb'
+  }]]
 }

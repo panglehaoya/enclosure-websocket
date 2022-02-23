@@ -1,6 +1,6 @@
 export const SET_IS_CONNECTED_WS = "SET_IS_CONNECTED_WS";
 
-export interface IPhone {
+export interface IPhoneStore {
   namespaced: boolean;
   state: () => IMeetingState;
   getters: IMeetingGetters;
@@ -53,7 +53,7 @@ export interface IMeetingGetters {
   isHostInMeeting?: (state: IMeetingState) => boolean;
 }
 
-const phone: IPhone = {
+const phone: IPhoneStore = {
   namespaced: true,
   state: () => ({
     isConnectedWS: false,

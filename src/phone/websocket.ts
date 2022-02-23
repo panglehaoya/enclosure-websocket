@@ -2,6 +2,13 @@ import mitt from "mitt";
 import { store } from "@/store";
 import { SET_IS_CONNECTED_WS } from "@/store/phoneStore";
 
+export type SendMessageType =
+  | "getMeetingInfo"
+  | "getMeetingMember"
+  | "getPasscodeCfg"
+  | "startQA"
+  | "endQA";
+
 const eventBus = mitt();
 
 export class PhoneWebSocket {
@@ -15,13 +22,11 @@ export class PhoneWebSocket {
   }
 
   init() {
-    if (!this.wsInstance) {
-      this.wsInstance = new WebSocket(this.url);
-    }
+    console.log("用于测试");
+  }
 
-    this.wsInstance.onopen = () => this.onOpen();
-    this.wsInstance.onmessage = (message) => this.onMessage(message);
-    this.wsInstance.onclose = () => this.onClose();
+  sendMsg(message: SendMessageType, data: Record<string, any>) {
+    console.log(message, data);
   }
 
   private onOpen() {

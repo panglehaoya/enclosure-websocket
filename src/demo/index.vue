@@ -1,6 +1,7 @@
 <template>
   <div>
     {{ msg }}
+    <ul></ul>
   </div>
 </template>
 
@@ -14,9 +15,6 @@ export default Vue.extend({
       msg: "index",
     };
   },
-  mounted() {
-    console.log("mounted");
-    console.log(this.$store.state.phone.meetingState);
-  },
+  mounted() {},
 });
 </script>
