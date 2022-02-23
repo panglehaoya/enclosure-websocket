@@ -2,9 +2,8 @@
   "name": "phone-websocket",
   "version": "2.1.5-0",
   "description": "phone-websocket",
-  "main": "lib/bundle.cjs.js",
+  "main": "lib/bundle.esm.js",
   "module": "lib/bundle.esm.js",
-  "browser": "lib/bundle.browser.js",
   "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public",
