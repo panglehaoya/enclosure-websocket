@@ -1,5 +1,4 @@
-import { PhoneWebSocket } from './phone-websocket'
-import { store } from './store'
-import type { StoreType, MemberInfoType } from './types'
+import { PhoneWebSocket } from "./phone/websocket";
+import phoneStore from "./store/phoneStore";
 
-export { PhoneWebSocket, store, StoreType, MemberInfoType }
+export { PhoneWebSocket, phoneStore };

@@ -1,12 +1,15 @@
 ---
 home: true
-heroText: '@songjp/dry'
-heroImage: /logo.png
-tagline: Personal JavaScript Utils, Don't Repeat Yourself
-actionText: Get Start
-actionLink: /guide/
+heroImage: /logo.jpg
+heroText: phone-websocket
+tagline: phone-websocket
+actionText: Get Start →
+actionLink: /pages/guide/introduction.md
 features:
-- title: 持续迭代
-  details: 持续维护更新，方便日常开发
-footer: MIT Licensed | Copyright © 20121-present songjp
+- title: ts支持
+  details: 完整的typescript支持。
+- title: Vuex
+  details: 使用vuex，作为核心数据管理。
+- title: 重连机制
+  details: websocket重连。
 ---

@@ -1,25 +1,35 @@
 module.exports = {
-  title: '@songjp/dry',
-  description: 'Just playing around',
-  base: '/dry/',
+  title: 'phone-websocket',
+  description: 'phone-websocket',
+  head: [
+    ['link',
+      { rel: 'icon', href: '/favicon.ico' }
+    ],
+  ],
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/logo.jpg',
+    lastUpdated: 'LastUpdated',
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      { text: 'API', link: '/api/' },
-      { text: 'Github', link: 'https://github.com/yes1am/dry' },
+      { text: 'Github', link: 'https://github.com/panglehaoya/phone-wesocket' },
     ],
     sidebar: {
-      '/guide/': [
-        '',
+      '/pages/guide/':[
+        {
+          title: '介绍',
+          collapsable: false,
+          children: [
+            ['introduction.md', '说明']
+          ]
+        },
+        {
+          title: '如何使用',
+          collapsable: false,
+          children: [
+            ['init.md', '初始化']
+          ]
+        }
       ],
-      '/api/': [
-          'queue',
-          'stack',
-          'day',
-      ],
-      '/changelog/': ['']
     }
   }
 }
