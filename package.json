@@ -1,6 +1,6 @@
 {
   "name": "enclosure-websocket",
-  "version": "1.0.3-0",
+  "version": "1.0.4-0",
   "description": "enclosure-websocket",
   "main": "lib/bundle.js",
   "module": "lib/bundle.js",
