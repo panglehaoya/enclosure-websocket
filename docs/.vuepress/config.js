@@ -1,7 +1,7 @@
 module.exports = {
   base: '/phone-websocket/',
-  title: 'phone-websocket',
-  description: 'phone-websocket',
+  title: 'enclosure-websocket',
+  description: 'enclosure-websocket',
   head: [
     ['link',
       { rel: 'icon', href: '/favicon.ico' }
@@ -12,7 +12,7 @@ module.exports = {
     lastUpdated: 'LastUpdated',
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Github', link: 'https://github.com/panglehaoya/phone-wesocket' },
+      { text: 'Github', link: 'https://github.com/panglehaoya/enclosure-websocket' },
     ],
     sidebar: {
       '/pages/guide/':[

@@ -1,6 +1,6 @@
 {
   "name": "enclosure-websocket",
-  "version": "1.0.6-0",
+  "version": "1.0.9-0",
   "description": "enclosure-websocket",
   "main": "lib/bundle.js",
   "module": "lib/bundle.js",
@@ -20,8 +20,8 @@
     "build": "rollup -c ./build/rollup.config.js",
     "build:types": "tsc",
     "lint": "eslint src/**",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev:docs": "vuepress dev docs",
+    "build:docs": "vuepress build docs",
     "prepare": "husky install",
     "change-log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
