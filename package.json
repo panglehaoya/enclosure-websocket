@@ -1,9 +1,9 @@
 {
-  "name": "phone-websocket",
-  "version": "2.1.6-0",
-  "description": "phone-websocket",
-  "main": "lib/bundle.esm.js",
-  "module": "lib/bundle.esm.js",
+  "name": "enclosure-websocket",
+  "version": "1.0.0",
+  "description": "enclosure-websocket",
+  "main": "lib/bundle.js",
+  "module": "lib/bundle.js",
   "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public",

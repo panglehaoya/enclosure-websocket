@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, "../src/demo/main.ts"),
+    main: path.join(__dirname, "../demo/main.ts"),
   },
   devtool: "eval-cheap-module-source-map",
   resolve: {
@@ -62,7 +62,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "../src/demo/index.html"),
+      template: path.join(__dirname, "../demo/index.html"),
     }),
   ],
   output: {
