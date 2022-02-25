@@ -15,7 +15,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "dev": "webpack-dev-server --config ./build/webpack.conf.dev.js",
     "build": "rollup -c ./build/rollup.config.js",
     "build:types": "tsc",

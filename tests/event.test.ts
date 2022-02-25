@@ -21,4 +21,13 @@ describe("event bus", () => {
 
     expect(fn).toHaveBeenCalledWith("hello");
   });
+
+  it("clear event", () => {
+    const fn = jest.fn();
+    eventBus.on("name-one");
+    eventBus.clear();
+    eventBus.emit("name-one");
+
+    expect(fn).toHaveBeenCalledTimes(0);
+  });
 });
